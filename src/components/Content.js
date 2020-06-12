@@ -10,7 +10,6 @@ const Content = () => {
               <Route path="/" exact render={props => <Main {...props} />} />
               <Route path="/listuser/:id"  exact component={Listuser} />
               {/* <Route exact path="/listuser" component={Listuser}/> */}
-
         </Switch>
     )
 }

@@ -26,49 +26,38 @@ class Listuser extends Component {
             isLoading:false,
             isFetchedDataItem:false,
 
-            }
+        }
     }
 
-    async componentDidMount(){
-    //     const {id} = this.props.match.params
-    //     // const roles = this.state.roles
-    //     const url = APP_URL.concat(`user/${id}`)
-    //     if((id == decode.id)){
-    //     this.props.dispatch(getUser(id))
-    //     const item = await axios.get(url, {
-    //       headers: {
-    //           Authorization: 'Bearer ' + token,
-    //         //   id_role: roles  
-    //       }
-          
-    //     })
-    //     const {data} = item
-    //     this.setState({data, isFetched:!this.state.isFetched})
-    // }
-    // console.log(roles)
-
+    componentDidMount(){
         const {id} =this.props.match.params
-        // const {roles} = this.props.match.params
+        const token = Cookie.get("token");
+        if (token) {
+          this.props.history.push(`/listuser/${id}`);
+        } else {
+          this.props.history.push("/login");
+        }
         this.props.dispatch(getUser(id))
         console.log(this.state.roles)
         this.setState(
           {isFetchedDataItem:true, paramsId_item : id})
         }
+
     render() {
         return (
             <div>
                 <div className="row wrapper border-bottom white-bg page-heading">
                     <div className="col-lg-10">
-                        <h2>Data Tables</h2>
+                        <h2>Users</h2>
                         <ol className="breadcrumb">
                         <li className="breadcrumb-item">
-                            <Link to="/dashboard">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className="breadcrumb-item">
-                            <span>Tables</span>
+                            <span>Table</span>
                         </li>
                         <li className="breadcrumb-item active">
-                            <strong>Users</strong>
+                            <strong>User</strong>
                         </li>
                         </ol>
                     </div>
@@ -81,24 +70,8 @@ class Listuser extends Component {
                         <div className="col-lg-12">
                         <div className="ibox ">
                             <div className="ibox-title">
-                            <h5>Users Table</h5>
-                            <div className="ibox-tools">
-                                <a href="fake_url" className="collapse-link">
-                                <i className="fa fa-chevron-up" />
-                                </a>
-                                <a className="dropdown-toggle" data-toggle="dropdown" href="fake_url">
-                                <i className="fa fa-wrench" />
-                                </a>
-                                <ul className="dropdown-menu dropdown-user">
-                                <li><a href="fake_url" className="dropdown-item">Config option 1</a>
-                                </li>
-                                <li><a href="fake_url" className="dropdown-item">Config option 2</a>
-                                </li>
-                                </ul>
-                                <a href="fake_url" className="close-link">
-                                <i className="fa fa-times" />
-                                </a>
-                            </div>
+                            <h5>Users</h5>
+                          
                             </div>
                             <div  className="ibox-content">
 
@@ -112,7 +85,11 @@ class Listuser extends Component {
                                     <th>Full Name</th>
                                     <th>Created On</th>
                                     <th>Updated On</th>
+                                    {this.state.roles===1 || this.state.roles===2?
                                     <th className="text-center">Action</th>
+                                    :
+                                    <text></text>
+                                    }
                                     </tr>
                                 </thead>
                             {
@@ -126,17 +103,19 @@ class Listuser extends Component {
                                     <td>{v.fullname}</td>
                                     <td>{v.created_on}</td>
                                     <td>{v.updated_on}</td>
+                                    {this.state.roles===1 || this.state.roles===2?
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <Link to="/edit_user" class="btn-success btn btn-xs">Edit</Link>
                                             <button class="btn-danger btn btn-xs">Delete</button>
                                         </div>
                                     </td>
-
+                                    :
+                                    <br/>
+                                    }
                                     </tr>
-
                                 </tbody>
-))}
+                                ))}
                                 </table>
                             </div>
                             </div>

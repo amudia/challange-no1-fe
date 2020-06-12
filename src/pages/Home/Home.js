@@ -17,22 +17,22 @@ class Home extends Component {
       this.props.history.push("/");
     }
   }
-    render() {
-        return (
-            <div>
-              <Router>
-                  <div id="wrapper"> 
-                    <Sidebar/>
-                    <div id="page-wrapper" className="gray-bg dashbard-1">
-                      <Header/>
-                      <Content/>
-                      <Footer/>
-                    </div>
-                  </div>
-              </Router>
-            </div>
-                )
-    }
+  render() {
+    return (
+        <div>
+          <Router>
+              <div id="wrapper"> 
+                <Sidebar/>
+                <div id="page-wrapper" className="gray-bg dashbard-1">
+                  <Header/>
+                  <Content/>
+                  <Footer/>
+                </div>
+              </div>
+          </Router>
+        </div>
+    )
+  }
 }
 
 export default Home;

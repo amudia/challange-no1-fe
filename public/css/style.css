@@ -860,6 +860,7 @@ h5 {
   display: block;
   width: 100%;
   position: relative;
+  background-color: #1e2e3d;
 }
 .nav.metismenu .dropdown-menu > li > a {
   padding: 3px 20px;
@@ -892,7 +893,7 @@ h5 {
   border: 0;
 }
 .navbar-default {
-  background-color: transparent;
+  background-color: #2f4050;
   border-color: #2f4050;
 }
 .navbar-top-links li {
@@ -1134,6 +1135,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .fixed-nav .slimScrollDiv #side-menu {
   padding-bottom: 60px;
+  
 }
 .mini-navbar .nav-second-level li a {
   padding: 10px 10px 10px 15px;
@@ -9421,7 +9423,7 @@ body.md-skin {
 }
 .md-skin.canvas-menu nav.navbar-static-side {
   z-index: 2001;
-  background: #ffffff;
+  background: #b11e1e;
   height: 100%;
   position: fixed;
   display: none;
@@ -9436,6 +9438,7 @@ body.md-skin {
     z-index: 2001;
     position: absolute;
     width: 220px;
+    height: 100%;
   }
   .navbar-top-links .dropdown-messages,
   .navbar-top-links .dropdown-tasks,
