@@ -26,6 +26,25 @@ const tenantreducer = (state = initialState, action) => {
                 isLoading:false,
                 isError:false,
                   }
+                  case 'GET_TENANTBYID_PENDING':
+            return {
+                ...state,
+                isLoading:true,
+                isError:false,
+            }
+        case 'GET_TENANTBYID_REJECTED':
+            return {
+                ...state,
+                isLoading: false,
+                isError:true,
+            }
+        case 'GET_TENANTBYID_FULFILLED':
+            return{
+                ...state,        
+                data: action.payload.data.data,
+                isLoading:false,
+                isError:false,
+                  }
         default :
         return state
     }

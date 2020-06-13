@@ -86,7 +86,9 @@ export default class Sidebar extends Component {
                             BS
                             </div> 
                         </li> 
-                        {this.state.roles===1 || this.state.roles===2?                           
+                        
+                        
+                        {this.state.roles===1 || this.state.roles===2?                                      
                         <li>
                             <a style={{color:'#fff'}}><i className="fa fa-bar-chart-o" /> <span className="nav-label">User Services</span><span className="fa arrow" /></a>
                             <ul className="nav nav-second-level collapse">
@@ -94,6 +96,7 @@ export default class Sidebar extends Component {
                             <li><Link to="/createuser">Create Users</Link></li>
                             </ul>
                         </li>
+                        
                         :
                         <li>
                             <a style={{color:'#fff'}}><i className="fa fa-bar-chart-o" /> <span className="nav-label">User Services</span><span className="fa arrow" /></a>
@@ -102,6 +105,19 @@ export default class Sidebar extends Component {
                         </ul>
                         </li>
                         }
+                        {this.state.roles===1?                                      
+                        <li>
+                            <a style={{color:'#fff'}}><i className="fa fa-bar-chart-o" /> <span className="nav-label">Tenant Services</span><span className="fa arrow" /></a>
+                            <ul className="nav nav-second-level collapse">
+                            <li><Link to="/listtenant">List Tenants</Link></li>
+                            <li><Link to="/createtenant">Create Tenants</Link></li>
+                            </ul>
+                        </li>
+                        :
+                        <li>
+                            
+                        </li>
+                         }
                         </ul>
                     </div>
                 </nav>

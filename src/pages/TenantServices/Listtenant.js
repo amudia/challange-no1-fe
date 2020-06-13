@@ -6,6 +6,7 @@ import Cookie from 'js-cookie'
 import Jwt from 'jwt-decode'
 import { getUser } from '../../redux/action/useraction'
 import { connect } from 'react-redux';
+import { getTenant } from '../../redux/action/tenantaction';
 
 const token = Cookie.get('token')
 let decode = ''
@@ -34,23 +35,22 @@ class Listuser extends Component {
         const {iduser} =this.props.match.params
         const token = Cookie.get("token");
         if (token) {
-          this.props.history.push(`/listuser/${id}`);
+          this.props.history.push(`/listtenant`);
         } else {
           this.props.history.push("/login");
         }
-        this.props.dispatch(getUser(id))
-        console.log(this.state.roles)
+        this.props.dispatch(getTenant())
         this.setState(
           {isFetchedDataItem:true, paramsId_item : id})
         }
 
-    deleteUser = async (id) =>{
-        const roles = decode.roles
-        const url = APP_URL.concat(`user/${id}`)
+    deleteTenant = async (id) =>{
+        // const roles = decode.roles
+        const url = APP_URL.concat(`tenant/${id}`)
         await axios.delete(url, {
             headers: {
                 Authorization: 'Bearer ' + token,
-                id_role: roles
+                // id_role: roles
             }
           })  
         this.setState({isFetchedDataItem: false})
@@ -64,7 +64,7 @@ class Listuser extends Component {
             <div>
                 <div className="row wrapper border-bottom white-bg page-heading">
                     <div className="col-lg-10">
-                        <h2>Users</h2>
+                        <h2>Tenant</h2>
                         <ol className="breadcrumb">
                         <li className="breadcrumb-item">
                             <Link to="/">Home</Link>
@@ -73,7 +73,7 @@ class Listuser extends Component {
                             <span>Table</span>
                         </li>
                         <li className="breadcrumb-item active">
-                            <strong>User</strong>
+                            <strong>Tenant</strong>
                         </li>
                         </ol>
                     </div>
@@ -86,7 +86,7 @@ class Listuser extends Component {
                         <div className="col-lg-12">
                         <div className="ibox ">
                             <div className="ibox-title">
-                            <h5>Users</h5>
+                            <h5>Tenant</h5>
                           
                             </div>
                             <div  className="ibox-content">
@@ -95,10 +95,7 @@ class Listuser extends Component {
                                 <table className="table table-striped table-bordered table-hover dataTables-example">
                                 <thead>
                                     <tr>
-                                    <th>Username</th>
-                                    <th>Full Name</th>
-                                    <th>Roles</th>
-                                    <th>Tenant</th>
+                                    <th>Name Tenant</th>
                                     <th>Created On</th>
                                     <th>Updated On</th>
                                     {this.state.roles===1 || this.state.roles===2?
@@ -109,21 +106,18 @@ class Listuser extends Component {
                                     </tr>
                                 </thead>
                             {
-                             !this.props.userreducer.isLoading&&this.props.userreducer.data&&
-                             this.props.userreducer.data.map((v, i)=>(
+                             !this.props.tenantreducer.isLoading&&this.props.tenantreducer.data&&
+                             this.props.tenantreducer.data.map((v, i)=>(
                                 <tbody key={v.id_role} >
                                     <tr className="gradeX">
-                                    <td>{v.username}</td>
-                                    <td>{v.fullname}</td>
-                                    <td>{v.name_role}</td>
                                     <td>{v.name_tenant}</td>
                                     <td>{v.created_on}</td>
                                     <td>{v.updated_on}</td>
-                                    {this.state.roles===1 || this.state.roles===2?
+                                    {this.state.roles===1 ?
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <Link to={`/edituser/${v.id_user}`} class="btn-success btn btn-xs">Edit</Link>
-                                            <button onClick = {()=>this.deleteUser(v.id_user)} class="btn-danger btn btn-xs">Delete</button>
+                                            <Link to={`/edittenant/${v.id_tenant}`} class="btn-success btn btn-xs">Edit</Link>
+                                            <button onClick = {()=>this.deleteTenant(v.id_tenant)} class="btn-danger btn btn-xs">Delete</button>
                                         </div>
                                     </td>
                                     :
@@ -146,7 +140,7 @@ class Listuser extends Component {
 }
 const mapStateToProps = state =>{
     return{
-      userreducer : state.userreducer,
+      tenantreducer : state.tenantreducer,
     }
   }  
 export default connect (mapStateToProps) (Listuser)

@@ -27,19 +27,6 @@ class Form_create_user extends Component {
       }
       }
 
-    //   async onSubmit(){
-    //     // event.preventDefault();
-    //     const id_role = this.state.id_role
-    //     const id_tenant = this.state.id_tenant
-    //     const fullname = this.state.fullname
-    //     const username = this.state.username
-    //     const password = this.state.password
-    //     await this.props.dispatch(addUser(id_role, id_tenant, fullname, username, password))
-    //     console.log(id_role,id_tenant,fullname, username, password)
-    //     alert('success')
-    //     window.location='/'
-    //   }
-
       onSubmit =async ()=>{
         const roles = decode.roles
         const url = APP_URL.concat(`user/add`)
@@ -58,18 +45,6 @@ class Form_create_user extends Component {
             window.location="/home"
         }
         
-    //   async onSubmit (event){
-    //     event.preventDefault();
-    //     const id_role = await this.state.roles
-    //     const id_tenant = await this.state.id_tenant
-    //     const fullname = await this.state.fullname
-    //     const username = await this.state.username
-    //     const password = await this.state.password
-    //     await this.props.dispatch(addUser({id_role, id_tenant, fullname, username, password}))
-    //     alert('Account Success Created!')
-    //     window.location = '/'
-    //     }
-    
     render() {
         return (
             <div>
@@ -120,7 +95,6 @@ class Form_create_user extends Component {
                                 <div className="hr-line-dashed" />
                                 <div className="form-group row">
                                 <div className="col-sm-4 col-sm-offset-2">
-                                    <button className="btn btn-white btn-sm" type="submit">Cancel</button>
                                     <button className="btn btn-primary btn-sm" value="submit" onClick =  {() => this.onSubmit()} >Save changes</button>
                                 </div>
                                 </div>

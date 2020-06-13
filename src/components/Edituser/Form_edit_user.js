@@ -133,7 +133,6 @@ class Form_edit_user extends Component {
                                 <div className="hr-line-dashed" />
                                 <div className="form-group row">
                                 <div className="col-sm-4 col-sm-offset-2">
-                                    <button className="btn btn-white btn-sm" type="submit">Cancel</button>
                                     <button className="btn btn-primary btn-sm" type="submit" onClick =  {() => this.onSubmit(this.state.id_user)}>Save changes</button>
                                 </div>
                                 </div>
@@ -143,9 +142,6 @@ class Form_edit_user extends Component {
                             <div className="form-group  row"><label className="col-sm-2 col-form-label">Fullname</label>
                             <div className="col-sm-10"><input type="text" className="form-control" value={this.state.fullname} onChange={(e)=>this.setState({fullname:e.target.value})} /></div>
                             </div>
-                            {/* <div className="form-group  row"><label className="col-sm-2 col-form-label">Name Tenant</label>
-                            <div className="col-sm-10"><input type="text" className="form-control" value={this.state.id_tenant} onChange={(e)=>this.setState({id_tenant:e.target.value})} /></div>
-                            </div> */}
                             <div className="hr-line-dashed" />
                             <div className="form-group  row"><label className="col-sm-2 col-form-label">Name Tenant</label>
                             <div className="col-sm-10"><input type="text" disabled="text" className="form-control" value={this.state.id_tenant} onChange={(e)=>this.setState({id_tenant:e.target.value})} /></div>
@@ -153,7 +149,6 @@ class Form_edit_user extends Component {
                             <div className="hr-line-dashed" />
                             <div className="form-group row">
                             <div className="col-sm-4 col-sm-offset-2">
-                                <button className="btn btn-white btn-sm" type="submit">Cancel</button>
                                 <button className="btn btn-primary btn-sm" type="submit" onClick =  {() => this.onSubmit(this.state.id_user)}>Save changes</button>
                             </div>
                             </div>

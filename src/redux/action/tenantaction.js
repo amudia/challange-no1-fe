@@ -21,3 +21,15 @@ export const getTenant = ()=>{
         }
     }
 
+
+    export const getTenantByID = (id) => {
+        const url = APP_URL.concat(`tenant/${id}`)
+        return {
+            type: 'GET_TENANTBYID',
+            payload: axios.get(url, {
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                }
+              })
+        }
+    }
