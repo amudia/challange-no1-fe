@@ -71,6 +71,7 @@ export default class Sidebar extends Component {
                             <img alt="User" className="rounded-circle" src="img/profile_small.jpg" />
                             <a data-toggle="dropdown" className="dropdown-toggle" href="/">
                                 <span className="block m-t-xs font-bold">{v.fullname} </span>
+                                <span className="block m-t-xs font-bold">{v.name_tenant} </span>
                                 <span className="text-muted text-xs block">{v.name_role}<b className="caret" /></span>
                             </a>
                             <ul className="dropdown-menu animated fadeInRight m-t-xs">

@@ -20,7 +20,7 @@ class Listuser extends Component {
             data: null,
             paramsId_item:null,
             paramsId_roles:null,
-
+            iduser:decode.iduser,
             roles:decode.roles,
             isFetched:false,
             isLoading:false,
@@ -31,6 +31,7 @@ class Listuser extends Component {
 
     componentDidMount(){
         const {id} =this.props.match.params
+        const {iduser} =this.props.match.params
         const token = Cookie.get("token");
         if (token) {
           this.props.history.push(`/listuser/${id}`);
@@ -44,6 +45,7 @@ class Listuser extends Component {
         }
 
     render() {
+        const iduser = this.props
         return (
             <div>
                 <div className="row wrapper border-bottom white-bg page-heading">
@@ -79,10 +81,9 @@ class Listuser extends Component {
                                 <table className="table table-striped table-bordered table-hover dataTables-example">
                                 <thead>
                                     <tr>
-                                    <th>ID User</th>
+                                    <th>Full Name</th>
                                     <th>Roles</th>
                                     <th>Tenant</th>
-                                    <th>Full Name</th>
                                     <th>Created On</th>
                                     <th>Updated On</th>
                                     {this.state.roles===1 || this.state.roles===2?
@@ -97,16 +98,15 @@ class Listuser extends Component {
                              this.props.userreducer.data.map((v, i)=>(
                                 <tbody key={v.id_role} >
                                     <tr className="gradeX">
-                                    <td>{v.id_user}</td>
+                                    <td>{v.fullname}</td>
                                     <td>{v.name_role}</td>
                                     <td>{v.name_tenant}</td>
-                                    <td>{v.fullname}</td>
                                     <td>{v.created_on}</td>
                                     <td>{v.updated_on}</td>
                                     {this.state.roles===1 || this.state.roles===2?
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <Link to="/edit_user" class="btn-success btn btn-xs">Edit</Link>
+                                            <Link to={`/edituser/${v.id_user}`} class="btn-success btn btn-xs">Edit</Link>
                                             <button class="btn-danger btn btn-xs">Delete</button>
                                         </div>
                                     </td>
