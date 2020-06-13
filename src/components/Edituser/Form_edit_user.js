@@ -4,7 +4,7 @@ import {APP_URL} from '../../resources/config'
 import Axios from 'axios';
 import Cookie from 'js-cookie'
 import Jwt from 'jwt-decode'
-import { getUserByID, editUser } from '../../redux/action/useraction';
+import { getUserByID } from '../../redux/action/useraction';
 import { getTenant } from '../../redux/action/tenantaction';
 import { connect } from 'react-redux';
 
@@ -75,7 +75,6 @@ class Form_edit_user extends Component {
             Authorization: 'Bearer ' + token,
             id_role:roles
             }})
-            alert('success')
             window.location="/home"
         }
         
@@ -119,9 +118,6 @@ class Form_edit_user extends Component {
                                 <div className="form-group  row"><label className="col-sm-2 col-form-label">Fullname</label>
                                 <div className="col-sm-10"><input type="text" className="form-control" value={this.state.fullname} onChange={(e)=>this.setState({fullname:e.target.value})} /></div>
                                 </div>
-                                {/* <div className="form-group  row"><label className="col-sm-2 col-form-label">Name Tenant</label>
-                                <div className="col-sm-10"><input type="text" className="form-control" value={this.state.id_tenant} onChange={(e)=>this.setState({id_tenant:e.target.value})} /></div>
-                                </div> */}
                                 <div className="hr-line-dashed" />
                                 <div class="form-group row"><label class="col-sm-2 col-form-label">Name Tenant</label>
                                 <div key={v.id_tenant} class="col-sm-10">

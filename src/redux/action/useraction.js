@@ -34,17 +34,16 @@ export const getUserByID = (id) => {
     }
 }
 
-export const editUser = (fullname, id_tenant,id)=>{
-    const roles = decode.roles
-    const url = APP_URL.concat(`user/edit/${id}`)
+export const addUser = (id_role, id_tenant, fullname, username, password)=>{
+    // const roles = decode.roles
+    const url = APP_URL.concat(`user/add`)
     return {
-      type: 'PUT_USER',
+      type: 'POST_USER',
       payload: axios.post(url,{
-        fullname, id_tenant, id,
+        id_role, id_tenant, fullname, username, password,
         headers: {
             Authorization: 'Bearer ' + token,
-            id_role: roles
-
+            // id_role: roles
         }
     })
     }

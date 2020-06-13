@@ -45,20 +45,20 @@ const userreducer = (state = initialState, action) => {
                 isLoading:false,
                 isError:false,
                   }
-                  case 'PUT_USER_PENDING':
-                    return {
-                      ...state,
-                      isLoading: true,
-                    }
-                  case 'PUT_USER_REJECTED':
-                    return {
-                      ...state,
-                      isError: true
-                    }
-                  case 'PUT_USER_FULFILLED':
-                    return {
-                      data: action.payload.data.data,
-                    }
+        case 'POST_USER_PENDING':
+            return {
+                ...state,
+                isLoading: true,
+            }
+        case 'POST_USER_REJECTED':
+            return {
+                ...state,
+                isError: true
+            }
+        case 'POST_USER_FULFILLED':
+            return {
+                data: action.payload.data.data,
+            }
         default :
         return state
     }

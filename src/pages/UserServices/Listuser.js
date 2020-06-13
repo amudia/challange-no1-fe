@@ -44,6 +44,20 @@ class Listuser extends Component {
           {isFetchedDataItem:true, paramsId_item : id})
         }
 
+    deleteCart = async (id) =>{
+        const roles = decode.roles
+        const url = APP_URL.concat(`user/${id}`)
+        await axios.delete(url, {
+            headers: {
+                Authorization: 'Bearer ' + token,
+                id_role: roles
+            }
+          })  
+        this.setState({isFetchedDataItem: false})
+        this.componentDidMount();
+        alert('Thanks')
+        }
+        
     render() {
         const iduser = this.props
         return (
@@ -81,6 +95,7 @@ class Listuser extends Component {
                                 <table className="table table-striped table-bordered table-hover dataTables-example">
                                 <thead>
                                     <tr>
+                                    <th>Username</th>
                                     <th>Full Name</th>
                                     <th>Roles</th>
                                     <th>Tenant</th>
@@ -98,6 +113,7 @@ class Listuser extends Component {
                              this.props.userreducer.data.map((v, i)=>(
                                 <tbody key={v.id_role} >
                                     <tr className="gradeX">
+                                    <td>{v.username}</td>
                                     <td>{v.fullname}</td>
                                     <td>{v.name_role}</td>
                                     <td>{v.name_tenant}</td>
@@ -107,7 +123,7 @@ class Listuser extends Component {
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <Link to={`/edituser/${v.id_user}`} class="btn-success btn btn-xs">Edit</Link>
-                                            <button class="btn-danger btn btn-xs">Delete</button>
+                                            <button onClick = {()=>this.deleteCart(v.id_user)} class="btn-danger btn btn-xs">Delete</button>
                                         </div>
                                     </td>
                                     :
