@@ -1,4 +1,50 @@
+<h1 align="center">User Services React - Front-End</h1>
+
+<p align="center">
+<a href="#"><img src="https://img.shields.io/badge/npm-6.13.4-brightgreen.svg?style=flat-square" alt="npm version">
+</a>
+<a href="#"><img src="https://img.shields.io/badge/node.js-12.14.0-blue.svg?style=flat-square" alt="node.js version"></a>
+<a href="#"><img src="https://img.shields.io/badge/react-16.12.0-green.svg?style=flat-square" alt="react version"></a>
+<a href="#"><img src="https://img.shields.io/badge/redux-4.0.5-informational.svg?style=flat-square" alt="redux version"></a>
+</p>
+
+User Services is Web Front-End built using ReactJS Framework and Integrated with User Services-API as the Back-End.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Screenshots
+
+### LOGIN
+<p align="center">
+![Screenshot (10)](https://user-images.githubusercontent.com/48955952/84592480-32cbab00-ae70-11ea-8073-23e0f74563fd.png)
+</p>
+
+### LIST USER (Superadmin)
+<p align="center">
+![Screenshot (15)](https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png)
+</p>
+
+### LIST USER (Admin)
+<p align="center">
+![Screenshot (12)](https://user-images.githubusercontent.com/48955952/84592557-c604e080-ae70-11ea-984a-18798240c0b2.png)
+</p>
+
+### CREATE USER (Superadmin, Admin)
+<p align="center">
+![Screenshot (15)](https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png)
+</p>
+
+### LIST USER (Ex. Director, Head Of Enginnering, Operator)
+<p align="center">
+![Screenshot (20)](https://user-images.githubusercontent.com/48955952/84592583-f2206180-ae70-11ea-8217-35f67c0c46ce.png)
+</p>
+
+## Developing
+1. Open your terminal or command prompt
+2. Type `git clone `https://github.com/amudia/challange-no1-fe.git`
+3. Open the project directory and Type `npm install` to install all dependencies
+4. Type `npm start` in the terminal or command prompt to run the App
+5. Open `http://localhost:3000` to view the running App
 
 ## Available Scripts
 
@@ -33,7 +79,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
