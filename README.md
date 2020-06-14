@@ -16,27 +16,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### LOGIN
 <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/48955952/84592480-32cbab00-ae70-11ea-8073-23e0f74563fd.png">
+  <img src="https://user-images.githubusercontent.com/48955952/84592480-32cbab00-ae70-11ea-8073-23e0f74563fd.png">
 </p>
 
 ### LIST USER (Superadmin)
 <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png">
+  <img src="https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png">
 </p>
 
 ### LIST USER (Admin)
 <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/48955952/84592557-c604e080-ae70-11ea-984a-18798240c0b2.png">
+  <img src="https://user-images.githubusercontent.com/48955952/84592557-c604e080-ae70-11ea-984a-18798240c0b2.png">
 </p>
 
 ### CREATE USER (Superadmin, Admin)
 <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png">
+  <img src="https://user-images.githubusercontent.com/48955952/84592543-9e157d00-ae70-11ea-9cb3-4036c7c034c6.png">
 </p>
 
 ### LIST USER (Ex. Director, Head Of Enginnering, Operator)
 <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/48955952/84592583-f2206180-ae70-11ea-8217-35f67c0c46ce.png">
+  <img src="https://user-images.githubusercontent.com/48955952/84592583-f2206180-ae70-11ea-8217-35f67c0c46ce.png">
 </p>
 
 ## Developing
