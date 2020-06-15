@@ -16,11 +16,18 @@ Login with:
 <p>
 Superadmin = username: sp1tn1 , password : 123456
 </p>
-Admin = username: ad1tn1 , password : 123456
-Director = username: dr1tn1 , password : 123456
-Head of engineering = username: hd1tn1 , password : 123456
-Operator = username: op1tn1 , password : 123456
-
+<p>
+  Admin = username: ad1tn1 , password : 123456
+</p>
+<p>
+  Director = username: dr1tn1 , password : 123456
+</p>
+<p>
+  Head of engineering = username: hd1tn1 , password : 123456
+</p>
+<p>
+  Operator = username: op1tn1 , password : 123456
+</p>
 
 ## Screenshots
 
